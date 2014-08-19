@@ -1,17 +1,39 @@
-CC=g++
-CFLAGS=-c -Wall
-LDFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
-SOURCES=main.cpp 
-OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=LD30
+# project name (generate executable with this name)
+TARGET		= LD30
 
-all: $(SOURCES) $(EXECUTABLE)
+CC		= g++
+CFLAGS  	= -Wall
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+LINKER  	= g++ -o
+LFLAGS		= -lsfml-graphics -lsfml-window -lsfml-system
 
-.cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
+# change these to set the proper directories where each files should be
+SRCDIR		= src
+OBJDIR		= obj
+INCDIR		= includes
+BINDIR		= bin
 
-clean: 
-	rm -rf *.o $(EXECUTABLE)
+SOURCES		:= $(wildcard $(SRCDIR)/*.cpp)
+INCLUDES	:= $(wildcard $(INCDIR)/*.hpp)
+OBJECTS		:= $(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
+rm		= rm -f
+
+
+$(BINDIR)/$(TARGET): $(OBJECTS)
+	@$(LINKER) $@ $(LFLAGS) $(OBJECTS)
+	@echo "Linking complete!"
+
+$(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "Compiled "$<" successfully!"
+
+.PHONEY: clean
+clean:
+	@$(rm) $(OBJECTS)
+	@echo "Cleanup complete!"
+
+.PHONEY: remove
+remove: clean
+	@$(rm) $(BINDIR)/$(TARGET)
+	@echo "Executable removed!"
+
