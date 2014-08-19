@@ -2,19 +2,18 @@
 TARGET		= LD30
 
 CC		= g++
-CFLAGS  	= -Wall
+CFLAGS  	= -Wall -I.
 
 LINKER  	= g++ -o
-LFLAGS		= -lsfml-graphics -lsfml-window -lsfml-system
+LFLAGS		= -Wall -I. -lsfml-graphics -lsfml-window -lsfml-system
 
 # change these to set the proper directories where each files should be
 SRCDIR		= src
 OBJDIR		= obj
-INCDIR		= includes
 BINDIR		= bin
 
 SOURCES		:= $(wildcard $(SRCDIR)/*.cpp)
-INCLUDES	:= $(wildcard $(INCDIR)/*.hpp)
+INCLUDES	:= $(wildcard $(SRCDIR)/*.hpp)
 OBJECTS		:= $(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 rm		= rm -f
 
