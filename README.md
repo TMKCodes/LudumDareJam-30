@@ -10,9 +10,9 @@ Play on Ubuntu:
 How to play on Ubuntu
 ---------------------
 
-``
+```
   $ git clone https://github.com/TMKCodes/LudumDareJam-30.git
   $ cd LudumDareJam-30
   $ make
   $ ./bin/LD30
-``
+```
