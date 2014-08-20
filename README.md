@@ -1,4 +1,5 @@
-= Ludum Dare 30 Jam Entry =
+Ludum Dare 30 Jam Entry
+=======================
 
 This is [Ludum Dare 30](http://www.ludumdare.com) jam entry. 
 
