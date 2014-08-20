@@ -9,7 +9,7 @@ How to play on Ubuntu
 ---------------------
 
 ```
-$ sudo apt-get install libsfml-dev
+$ sudo apt-get install build-essential git libsfml-dev
 $ git clone https://github.com/TMKCodes/LudumDareJam-30.git
 $ cd LudumDareJam-30
 $ make
