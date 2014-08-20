@@ -36,3 +36,14 @@ remove: clean
 	@$(rm) $(BINDIR)/$(TARGET)
 	@echo "Executable removed!"
 
+.PHONEY: install
+install: uninstall
+	@cp $(BINDIR)/$(TARGET) /usr/bin/$(TARGET)
+	@mkdir /usr/share/$(TARGET)
+	@cp -r $(BINDIR)/* /usr/share/$(TARGET)/
+
+.PHONEY: uninstall
+uninstall:
+	@rm -f /usr/bin/$(TARGET)
+	@rm -rf /usr/share/$(TARGET)
+

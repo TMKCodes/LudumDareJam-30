@@ -10,7 +10,7 @@ sfge::statetest::statetest(sf::RenderWindow * window) {
 	this->twoshape.setPosition(sf::Vector2f(wsize.x/2, wsize.y-wsize.y/4));
 	this->clock = sf::Clock();
 	this->font = sf::Font();
-	if(!font.loadFromFile("assets/fonts/arial.ttf")) {
+	if(!font.loadFromFile("/usr/share/LD30/assets/fonts/arial.ttf")) {
 		std::cout << "Failed to load assets/fonts/arial.ttf font" << std::endl;
 	} else {
 		this->fpsText = sf::Text();
