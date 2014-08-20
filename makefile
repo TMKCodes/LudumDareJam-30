@@ -2,7 +2,7 @@
 TARGET		= LD30
 
 CC		= g++
-CFLAGS  	= -Wall -I.
+CFLAGS  	= -Wall -I. -fpermissive
 
 LINKER  	= g++ -o
 LFLAGS		= -Wall -I. -lsfml-graphics -lsfml-window -lsfml-system

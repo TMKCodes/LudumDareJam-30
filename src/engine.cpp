@@ -5,10 +5,16 @@ sfge::engine::engine() {
 	this->window = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "Simple Fast Game Engine");
 	this->window->setVerticalSyncEnabled(true);
 	this->window->setFramerateLimit(60);
+
+	this->gearbox = new sfge::gearbox();
+
+	sfge::state * state = new sfge::statetest();
+	this->gearbox->add(state);
 }
 
 sfge::engine::~engine() {
 	delete this->window;
+	delete this->gearbox;
 }
 
 bool sfge::engine::running() {
@@ -24,13 +30,14 @@ void sfge::engine::update() {
 				this->status = false;
 			}
 		}
+		this->gearbox->update();
 	}
 }
 
 void sfge::engine::draw() {
 	if(this->window->isOpen()) {
 		this->window->clear(sf::Color::Black);
-
+		this->gearbox->draw();
 		this->window->display();
 	}
 }

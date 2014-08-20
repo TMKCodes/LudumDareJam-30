@@ -3,10 +3,15 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "gearbox.hpp"
+#include "state.hpp"
+#include "statetest.hpp"
+
 namespace sfge {
 	class engine {
 		private:
 			sf::RenderWindow * window;
+			sfge::gearbox * gearbox;
 			bool status;
 		public:	
 			engine();
