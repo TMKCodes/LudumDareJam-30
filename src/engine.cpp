@@ -13,8 +13,8 @@ sfge::engine::engine() {
 }
 
 sfge::engine::~engine() {
-	delete this->window;
 	delete this->gearbox;
+	delete this->window;
 }
 
 bool sfge::engine::running() {
