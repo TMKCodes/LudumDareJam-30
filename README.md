@@ -13,5 +13,6 @@ $ sudo apt-get install build-essential git libsfml-dev
 $ git clone https://github.com/TMKCodes/LudumDareJam-30.git
 $ cd LudumDareJam-30
 $ make
-$ ./bin/LD30
+$ cd bin
+$ ./LD30
 ```

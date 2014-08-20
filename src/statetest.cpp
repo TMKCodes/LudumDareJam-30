@@ -9,14 +9,13 @@ sfge::statetest::statetest(sf::RenderWindow * window) {
 	this->twoshape = sf::RectangleShape(sf::Vector2f(50, 50));
 	this->twoshape.setPosition(sf::Vector2f(wsize.x/2, wsize.y-wsize.y/4));
 	this->clock = sf::Clock();
-	this->lastTime = 0;
-	sf::Font font;
-	if(!font.loadFromFile("comic.ttf")) {
-		std::cout << "Failed to load arial.ttf font" << std::endl;
+	this->font = sf::Font();
+	if(!font.loadFromFile("assets/fonts/arial.ttf")) {
+		std::cout << "Failed to load assets/fonts/arial.ttf font" << std::endl;
 	} else {
 		this->fpsText = sf::Text();
 		this->fpsText.setFont(font);
-		this->fpsText.setCharacterSize(12);
+		this->fpsText.setCharacterSize(24);
 	}
 }
 
@@ -72,8 +71,7 @@ void sfge::statetest::update() {
 		this->twoshape.move(sf::Vector2f(-twoshapex, -twoshapey));
 	}
 	float currentTime = this->clock.restart().asSeconds();
-	float fps = 1.f / (currentTime - this->lastTime);
-	this->lastTime = currentTime;
+	float fps = 1.f / currentTime;
 	std::ostringstream ss;
 	ss << "FPS: " << fps;
 	this->fpsText.setString(ss.str());

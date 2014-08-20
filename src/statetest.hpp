@@ -14,7 +14,7 @@ namespace sfge {
 			sf::RectangleShape oneshape;
 			sf::RectangleShape twoshape;
 			sf::Clock clock;
-			float lastTime;
+			sf::Font font;
 			sf::Text fpsText;
 		public:
 			statetest(sf::RenderWindow * window);
