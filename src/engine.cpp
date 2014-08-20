@@ -3,12 +3,12 @@
 sfge::engine::engine() {
 	this->status = true;
 	this->window = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "Simple Fast Game Engine");
-	this->window->setVerticalSyncEnabled(true);
-	this->window->setFramerateLimit(60);
+	//this->window->setVerticalSyncEnabled(true);
+	//this->window->setFramerateLimit(60);
 
 	this->gearbox = new sfge::gearbox();
 
-	sfge::state * state = new sfge::statetest();
+	sfge::state * state = new sfge::statetest(window);
 	this->gearbox->add(state);
 }
 
