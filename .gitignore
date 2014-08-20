@@ -1,4 +1,6 @@
+!bin
 bin/*
 !bin/assets
+!obj
 obj/*
 src/.*
