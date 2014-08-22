@@ -5,7 +5,7 @@
 
 #include "gearbox.hpp"
 #include "state.hpp"
-#include "statetest.hpp"
+#include "loaderstate.hpp"
 
 namespace sfge {
 	class engine {

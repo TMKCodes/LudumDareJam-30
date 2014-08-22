@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <unistd.h>
 #include <SFML/Graphics.hpp>
 #include "state.hpp"
 

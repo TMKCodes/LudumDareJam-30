@@ -8,8 +8,8 @@ sfge::engine::engine() {
 
 	this->gearbox = new sfge::gearbox();
 
-	sfge::state * state = new sfge::statetest(window);
-	this->gearbox->add(state);
+	sfge::state * loaderstate = new sfge::loaderstate(window);
+	this->gearbox->add(loaderstate);
 }
 
 sfge::engine::~engine() {

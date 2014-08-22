@@ -67,6 +67,9 @@ void sfge::statetest::update() {
 	this->oneshape.move(sf::Vector2f(oneshapex, oneshapey));
 	this->twoshape.move(sf::Vector2f(twoshapex, twoshapey));
 	if(this->oneshape.getGlobalBounds().intersects(this->twoshape.getGlobalBounds())) {
+		this->twoshape.move(sf::Vector2f(oneshapex/2, oneshapey/2));
+	}
+	if(this->twoshape.getGlobalBounds().intersects(this->oneshape.getGlobalBounds())) {
 		this->oneshape.move(sf::Vector2f(-oneshapex, -oneshapey));
 		this->twoshape.move(sf::Vector2f(-twoshapex, -twoshapey));
 	}
@@ -75,6 +78,7 @@ void sfge::statetest::update() {
 	std::ostringstream ss;
 	ss << "FPS: " << fps;
 	this->fpsText.setString(ss.str());
+	usleep(1000);
 }
 
 void sfge::statetest::draw() {
